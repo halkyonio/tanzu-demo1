@@ -41,7 +41,7 @@ fragments:
     source:
       image: kind-registry:5000/tap/tap-packages@sha256:2c6283602cb7a76b2e1112756e9482184e51b3c020b604376229a3b8463916a2
 options:
-  artifactId: customer-profile
+  artifactId: tanzu-java-rest
   buildTool: maven
   databaseIntegrationTestType: testcontainers
   databaseMigrationTool: flyway

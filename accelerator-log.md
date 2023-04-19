@@ -3,7 +3,7 @@
 ## Options
 ```json
 {
-  "artifactId" : "customer-profile",
+  "artifactId" : "tanzu-java-rest",
   "buildTool" : "maven",
   "databaseIntegrationTestType" : "testcontainers",
   "databaseMigrationTool" : "flyway",
@@ -29,7 +29,7 @@
 ┃ ┃ ┃  Info Combo running as Let
 ┃ ┃ ┃ engine.transformations[0].validated.delegate (Let)
 ┃ ┃ ┃ Debug Adding symbol packageDirectory with value 'com/example/customerprofile'
-┃ ┃ ┃ Debug Adding symbol workloadResourceName with value 'customer-profile'
+┃ ┃ ┃ Debug Adding symbol workloadResourceName with value 'tanzu-java-rest'
 ┃ ┃ ┃ Debug Adding symbol javaVersion with value '11'
 ┃ ┃ ┃ Debug Adding symbol databaseResourceName with value 'customer-database'
 ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in (Chain)
@@ -356,7 +356,7 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/vmware/tap/accelerators/restservicedb/Application.java didn't match [config/workload.yaml, config/test-pipeline.yaml] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ Debug LICENSE didn't match [config/workload.yaml, config/test-pipeline.yaml] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[3].delegate.transformations[0].sources[1].delegate.transformations[1] (ReplaceText)
-┃ ┃ ┃ ┃ ┃ ┗ ┗ ┗  Info Will replace [customer-database->customer-database, rest-service-db->customer-profile]
+┃ ┃ ┃ ┃ ┃ ┗ ┗ ┗  Info Will replace [customer-database->customer-database, rest-service-db->tanzu-java-rest]
 ┃ ┃ ┃ ┃ ┗ ╺ engine.transformations[0].validated.delegate.in.transformations[3].delegate.transformations[1] (UniquePath)
 ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[4] (Combo)
 ┃ ┃ ┃ ┃ ┃  Info Combo running as Chain
@@ -1272,7 +1272,7 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug README.md didn't match [Tiltfile] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ Debug Tiltfile matched [Tiltfile] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[9].delegate.transformations[0].sources[0].validated.delegate.transformations[0].sources[0].delegate.transformations[1] (ReplaceText)
-┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [my-project->customer-profile]
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [my-project->tanzu-java-rest]
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[9].delegate.transformations[0].sources[0].validated.delegate.transformations[0].sources[0].delegate.transformations[2] (ReplaceText)
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ ┗  Info Will replace [dev.local->kind-registry:5000/t...(truncated)]
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[9].delegate.transformations[0].sources[0].validated.delegate.transformations[0].sources[1] (Combo)
@@ -1316,7 +1316,7 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug README.md didn't match [DEPLOYING.md] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ Debug Tiltfile didn't match [DEPLOYING.md] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[9].delegate.transformations[0].sources[0].validated.delegate.transformations[0].sources[1].delegate.transformations[1] (ReplaceText)
-┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [my-project->customer-profile]
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [my-project->tanzu-java-rest]
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[9].delegate.transformations[0].sources[0].validated.delegate.transformations[0].sources[1].delegate.transformations[2] (ReplaceText)
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ ┗ ┗  Info Will replace [dev.local->kind-registry:5000/t...(truncated)]
 ┃ ┃ ┃ ┃ ┃ ┃ ┗ ┗ ╺ engine.transformations[0].validated.delegate.in.transformations[9].delegate.transformations[0].sources[0].validated.delegate.transformations[1] (UniquePath)
@@ -1581,7 +1581,7 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug config/test-pipeline.yaml didn't match [**/*.jar] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ Debug config/app-operator/postgres-resource-claim.yaml didn't match [**/*.jar] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[12].delegate.transformations[0].sources[1].delegate.transformations[1] (ReplaceText)
-┃ ┃ ┃ ┃ ┃ ┗ ┗ ┗  Info Will replace [rest-service-db->customer-profile]
+┃ ┃ ┃ ┃ ┃ ┗ ┗ ┗  Info Will replace [rest-service-db->tanzu-java-rest]
 ┃ ┃ ┃ ┃ ┗ ╺ engine.transformations[0].validated.delegate.in.transformations[12].delegate.transformations[1] (UniquePath)
 ┃ ┃ ┃ ┃ ┏ engine.transformations[0].validated.delegate.in.transformations[13] (Combo)
 ┃ ┃ ┃ ┃ ┗  Info Condition (#updateBoot3) evaluated to false

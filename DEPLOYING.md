@@ -38,9 +38,9 @@ tanzu apps workload apply -f config/workload.yaml
 If you would like deploy the code from your local working directory you can use the following command:
 
 ```
-tanzu apps workload create customer-profile -f config/workload.yaml \
+tanzu apps workload create tanzu-java-rest -f config/workload.yaml \
   --local-path . \
-  --source-image kind-registry:5000/tanzu-demo/customer-profile-source \
+  --source-image kind-registry:5000/tanzu-demo/tanzu-java-rest-source \
   --type web
 ```
 
@@ -49,7 +49,7 @@ tanzu apps workload create customer-profile -f config/workload.yaml \
 Determine the URL to use for the accessing the app by running:
 
 ```
-tanzu apps workload get customer-profile
+tanzu apps workload get tanzu-java-rest
 ```
 
 To access the deployed app use the URL shown under "Workload Knative Services".

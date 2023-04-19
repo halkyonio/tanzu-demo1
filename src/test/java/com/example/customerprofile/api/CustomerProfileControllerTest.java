@@ -46,12 +46,12 @@ class CustomerProfileControllerTest {
                     "\"email\": \"joe.doe@test.org\"" +
                     "}";
 
-            mockMvc.perform(post("/api/customer-profiles")
+            mockMvc.perform(post("/api/tanzu-java-rests")
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON)
                             .content(requestBody))
                     .andExpect(status().isCreated())
-                    .andExpect(header().string("Location", "/api/customer-profiles/profile-id"))
+                    .andExpect(header().string("Location", "/api/tanzu-java-rests/profile-id"))
                     .andExpect(content().json("{" +
                             "\"id\": \"profile-id\"," +
                             "\"firstName\": \"Joe\"," +
@@ -76,7 +76,7 @@ class CustomerProfileControllerTest {
                     "\"lastName\": \"Doe\"" +
                     "}";
 
-            mockMvc.perform(post("/api/customer-profiles")
+            mockMvc.perform(post("/api/tanzu-java-rests")
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON)
                             .content(requestBody))
@@ -100,7 +100,7 @@ class CustomerProfileControllerTest {
                     "\"lastName\": \"Doe\"" +
                     "}";
 
-            mockMvc.perform(patch("/api/customer-profiles/profile-id")
+            mockMvc.perform(patch("/api/tanzu-java-rests/profile-id")
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON)
                             .content(requestBody))
@@ -128,7 +128,7 @@ class CustomerProfileControllerTest {
         @Test
         void shouldDelegateToService() throws Exception {
 
-            mockMvc.perform(delete("/api/customer-profiles/profile-id")
+            mockMvc.perform(delete("/api/tanzu-java-rests/profile-id")
                             .accept(MediaType.APPLICATION_JSON))
                     .andExpect(status().isOk());
 
@@ -142,15 +142,15 @@ class CustomerProfileControllerTest {
         @Test
         void shouldDelegateToService() throws Exception {
 
-            var id = "customer-profile-id";
+            var id = "tanzu-java-rest-id";
             when(service.getById(any()))
                     .thenReturn(Optional.of(new CustomerProfileResponse(id, "Joe", "Doe", "joe.doe@test.org")));
 
-            mockMvc.perform(get("/api/customer-profiles/" + id)
+            mockMvc.perform(get("/api/tanzu-java-rests/" + id)
                             .accept(MediaType.APPLICATION_JSON))
                     .andExpect(status().isOk())
                     .andExpect(content().json("{" +
-                            "\"id\": \"customer-profile-id\"," +
+                            "\"id\": \"tanzu-java-rest-id\"," +
                             "\"firstName\": \"Joe\"," +
                             "\"lastName\": \"Doe\"," +
                             "\"email\": \"joe.doe@test.org\"" +
@@ -163,13 +163,13 @@ class CustomerProfileControllerTest {
         void shouldReadAllDelegateToService() throws Exception {
 
             when(service.getAll())
-                    .thenReturn(Stream.of(new CustomerProfileResponse("customer-profile-id", "Joe", "Doe", "joe.doe@test.org")));
+                    .thenReturn(Stream.of(new CustomerProfileResponse("tanzu-java-rest-id", "Joe", "Doe", "joe.doe@test.org")));
 
-            mockMvc.perform(get("/api/customer-profiles/")
+            mockMvc.perform(get("/api/tanzu-java-rests/")
                             .accept(MediaType.APPLICATION_JSON))
                     .andExpect(status().isOk())
                     .andExpect(content().json("[{" +
-                            "\"id\": \"customer-profile-id\"," +
+                            "\"id\": \"tanzu-java-rest-id\"," +
                             "\"firstName\": \"Joe\"," +
                             "\"lastName\": \"Doe\"," +
                             "\"email\": \"joe.doe@test.org\"" +
@@ -181,10 +181,10 @@ class CustomerProfileControllerTest {
         @Test
         void shouldReturnNotFoundWhenNotExists() throws Exception {
 
-            var id = "customer-profile-id";
+            var id = "tanzu-java-rest-id";
             when(service.getById(any())).thenReturn(Optional.empty());
 
-            mockMvc.perform(get("/api/customer-profiles/" + id)
+            mockMvc.perform(get("/api/tanzu-java-rests/" + id)
                             .accept(MediaType.APPLICATION_JSON))
                     .andExpect(status().isNotFound())
                     .andExpect(content().string(""));

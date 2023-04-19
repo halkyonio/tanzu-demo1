@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>customer-profile</artifactId>
+    <artifactId>tanzu-java-rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>customer-profile</name>
+    <name>tanzu-java-rest</name>
     <description>no description yet</description>
 
     <properties>

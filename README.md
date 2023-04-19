@@ -1,6 +1,6 @@
-# Introduction customer-profile
+# Introduction tanzu-java-rest
 
-customer-profile provides you an out-of-the-box application setup to implement your business logic. It is based on the
+tanzu-java-rest provides you an out-of-the-box application setup to implement your business logic. It is based on the
 commonly known 3-layered application architecture in where the package `api` provides the presentation layer, `domain` provides 
 the services and business domain and finally the `data` package provides you the capability to persist your domain.
 
@@ -74,37 +74,37 @@ curl $APP_URL/api-docs
 
 ### Create customer profile
 
-You can access the `customer-profiles` API endpoint using `curl`:
+You can access the `tanzu-java-rests` API endpoint using `curl`:
 
 ```bash
-curl -X POST -H 'Content-Type: application/json' $APP_URL/api/customer-profiles -d '{"firstName": "Joe", "lastName": "Doe", "email": "joe.doe@test.org"}'
+curl -X POST -H 'Content-Type: application/json' $APP_URL/api/tanzu-java-rests -d '{"firstName": "Joe", "lastName": "Doe", "email": "joe.doe@test.org"}'
 ```
 
 ### Get customer profile
 
 Use the `id` received by previous POST call.
 ```bash
-curl -X GET $APP_URL/api/customer-profiles/{id}
+curl -X GET $APP_URL/api/tanzu-java-rests/{id}
 ```
 
 ### Get all customer profiles
 
 ```bash
-curl -X GET $APP_URL/api/customer-profiles/
+curl -X GET $APP_URL/api/tanzu-java-rests/
 ```
 
 ### Update customer profile
 
 Use the `id` received by previous creation call.
 ```bash
-curl -X PATCH -H 'Content-Type: application/json' $APP_URL/api/customer-profiles/{id} -d '{"firstName": "Jane", "lastName": "Little"}'
+curl -X PATCH -H 'Content-Type: application/json' $APP_URL/api/tanzu-java-rests/{id} -d '{"firstName": "Jane", "lastName": "Little"}'
 ```
 
 ### Delete customer profile
 
 Use the `id` received by previous creation call.
 ```bash
-curl -X DELETE $APP_URL/api/customer-profiles/{id}
+curl -X DELETE $APP_URL/api/tanzu-java-rests/{id}
 ```
 
 # Cluster Deployment

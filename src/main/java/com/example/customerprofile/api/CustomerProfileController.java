@@ -39,7 +39,7 @@ import javax.validation.Valid;
                 name = "Customer Profile REST API"))
 @CrossOrigin
 @RestController
-@RequestMapping("/api/customer-profiles")
+@RequestMapping("/api/tanzu-java-rests")
 public class CustomerProfileController {
 
     private final CustomerProfileService service;
@@ -68,7 +68,7 @@ public class CustomerProfileController {
     public ResponseEntity<CustomerProfileResponse> create(@Valid @RequestBody CustomerProfileCreateRequest body) {
         var customerProfileResponse = service.create(body);
         return ResponseEntity
-                .created(URI.create("/api/customer-profiles/" + customerProfileResponse.getId()))
+                .created(URI.create("/api/tanzu-java-rests/" + customerProfileResponse.getId()))
                 .body(customerProfileResponse);
     }
 

@@ -1,10 +1,10 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: customer-profile
+  name: tanzu-java-rest
   labels:
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: customer-profile
+    app.kubernetes.io/part-of: tanzu-java-rest
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
 spec:
@@ -21,7 +21,7 @@ spec:
         apps.tanzu.vmware.com/pipeline: test-java
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/halkyonio/tanzu-demo1.git
       ref:
         branch: main
   serviceClaims:

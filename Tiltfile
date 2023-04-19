@@ -1,9 +1,11 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='kind-registry:5000/tanzu-demo/customer-profile-source')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='kind-registry:5000/tanzu/demo1')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='default')
+NAMESPACE = os.getenv("NAMESPACE", default='demo1')
+
+allow_k8s_contexts('tap15-kind')
 
 k8s_custom_deploy(
-    'customer-profile',
+    'tanzu-java-rest',
     apply_cmd="tanzu apps workload apply -f config/workload.yaml --update-strategy replace --debug --live-update" +
               " --local-path " + LOCAL_PATH +
               " --source-image " + SOURCE_IMAGE +
@@ -17,5 +19,5 @@ k8s_custom_deploy(
     ]
 )
 
-k8s_resource('customer-profile', port_forwards=["8080:8080"],
-            extra_pod_selectors=[{'carto.run/workload-name': 'customer-profile','app.kubernetes.io/component': 'run'}])
+k8s_resource('tanzu-java-rest', port_forwards=["8080:8080"],
+            extra_pod_selectors=[{'carto.run/workload-name': 'tanzu-java-rest','app.kubernetes.io/component': 'run'}])

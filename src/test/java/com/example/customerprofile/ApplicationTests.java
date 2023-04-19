@@ -46,7 +46,7 @@ class ApplicationTests {
         var headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         var httpEntity = new HttpEntity<>(body, headers);
-        var responseEntity = restTemplate.postForEntity("/api/customer-profiles", httpEntity, String.class);
+        var responseEntity = restTemplate.postForEntity("/api/tanzu-java-rests", httpEntity, String.class);
 
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         assertThat(responseEntity.hasBody()).isTrue();
@@ -68,7 +68,7 @@ class ApplicationTests {
                 .setEmail("joe.doe@test.org");
         repository.save(entity);
 
-        var responseEntity = restTemplate.getForEntity("/api/customer-profiles/" + entity.getId(), String.class);
+        var responseEntity = restTemplate.getForEntity("/api/tanzu-java-rests/" + entity.getId(), String.class);
 
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(responseEntity.getHeaders().getContentType()).isEqualTo(MediaType.APPLICATION_JSON);
